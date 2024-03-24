@@ -15,7 +15,6 @@ public class User {
 
     private Gender gender;
 
-    private BigDecimal balance;
 
     public User(String username, String password, String name, String surname, String tckn, Gender gender) {
         this.username = username;
@@ -24,7 +23,6 @@ public class User {
         this.surname = surname;
         this.tckn = tckn;
         this.gender = gender;
-        balance = new BigDecimal(0);
     }
 
     public User setUsername(String username) {
@@ -57,11 +55,6 @@ public class User {
         return this;
     }
 
-    public User setBalance(BigDecimal balance) {
-        this.balance = balance;
-        return this;
-    }
-
     public String getUsername() {
         return username;
     }
@@ -84,17 +77,5 @@ public class User {
 
     public Gender getGender() {
         return gender;
-    }
-
-    public BigDecimal getBalance() {
-        return balance;
-    }
-
-    public void increaseBalance(BigDecimal amount){
-        balance = balance.add(amount);
-    }
-
-    public void decreaseBalance(BigDecimal amount){
-        balance = balance.subtract(amount);
     }
 }
